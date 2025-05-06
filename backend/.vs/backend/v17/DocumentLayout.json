@@ -1,12 +1,177 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\backend\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\models\\config\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:models\\config\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\models\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:models\\base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\models\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:models\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\repos\\noterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:repos\\noterepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\models\\dto\\notedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:models\\dto\\notedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|c:\\users\\asus\\source\\repos\\notes-application\\backend\\controllers\\notecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42C7DC01-8B4C-4634-AB4C-1496F33B57F3}|backend.csproj|solutionrelative:controllers\\notecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-06T10:19:52.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:24:51.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Base.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Base.cs",
+              "RelativeDocumentMoniker": "Models\\Base.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Base.cs",
+              "RelativeToolTip": "Models\\Base.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:48:52.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DBContext.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Config\\DBContext.cs",
+              "RelativeDocumentMoniker": "Models\\Config\\DBContext.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Config\\DBContext.cs",
+              "RelativeToolTip": "Models\\Config\\DBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T09:48:40.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NoteDto.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\DTO\\NoteDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\NoteDto.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\DTO\\NoteDto.cs",
+              "RelativeToolTip": "Models\\DTO\\NoteDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:50:13.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-06T08:46:41.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Note.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Note.cs",
+              "RelativeDocumentMoniker": "Models\\Note.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Models\\Note.cs",
+              "RelativeToolTip": "Models\\Note.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:36:05.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NoteController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Controllers\\NoteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NoteController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Controllers\\NoteController.cs",
+              "RelativeToolTip": "Controllers\\NoteController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:26:04.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NoteRepo.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Repos\\NoteRepo.cs",
+              "RelativeDocumentMoniker": "Repos\\NoteRepo.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\notes-application\\backend\\Repos\\NoteRepo.cs",
+              "RelativeToolTip": "Repos\\NoteRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T07:52:14.889Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
