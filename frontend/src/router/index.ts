@@ -1,29 +1,40 @@
+import NoteCreateView from '@/features/note/views/NoteCreateView.vue'
+import NoteDetailView from '@/features/note/views/NoteDetailView.vue'
+import NoteEditView from '@/features/note/views/NoteEditView.vue'
+import NoteListView from '@/features/note/views/NoteListView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'note-list',
+      component: NoteListView,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      path: '/:id/edit',
+      name: 'edit-note',
+      component: NoteEditView,
+    },
+    {
+      path: '/create',
+      name: 'create-note',
+      component: NoteCreateView,
+    },
+    {
+      path: '/:id',
+      name: 'note-detail',
+      component: NoteDetailView,
+    },
+    {
+      path: '/:patchMatch(.*)*',
+      name: 'not-found',
+      component: NotFoundView,
     },
   ],
 })
 
 export default router
-
-//edit: /:id/edit
-//view: /:id
-//create /create
-
-//login / signup
