@@ -1,1 +1,18 @@
 @import 'tailwindcss';
+
+@theme inline {
+  --color-primary: var(--primary);
+}
+
+:root {
+  --primary: #1D4ED8;
+}
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @variant lg {
+    padding-inline: 2rem;
+  }
+}
