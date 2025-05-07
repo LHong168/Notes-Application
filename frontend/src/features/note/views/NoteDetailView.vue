@@ -10,7 +10,7 @@ import { useDeleteNote } from '../api/useDeleteNoteMutation';
 const route = useRoute()
 const { data, isLoading, isError } = useGetNote(Number(route.params.id))
 const { mutateAsync } = useDeleteNote();
-const { open, error } = useConfirmDialog();
+const { open } = useConfirmDialog();
 
 const router = useRouter();
 
@@ -21,13 +21,8 @@ const editNote = () => {
 const deleteNote = (id: number, title: string) => {
   open(`Are you sure you want to delete "${title}" ?`,
     async () => {
-      error.value = '';
-      try {
-        await mutateAsync(id);
-        router.push('/')
-      } catch (err) {
-        error.value = err instanceof Error ? err.message : 'An unexpected error occurred.'
-      }
+      await mutateAsync(id);
+      router.push('/')
     })
 };
 
