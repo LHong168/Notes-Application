@@ -66,7 +66,8 @@ namespace backend.Repos
             }
             catch (Exception ex)
             {
-                return new ResponseRepo {
+                return new ResponseRepo
+                {
                     success = false,
                     message = $"Error: {ex.Message}"
                 };

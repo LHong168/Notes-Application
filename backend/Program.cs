@@ -2,7 +2,6 @@ using backend.Models.Config;
 using DotNetEnv;
 using backend.Repos;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 Env.Load();
