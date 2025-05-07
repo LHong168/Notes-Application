@@ -261,4 +261,5 @@ pub/
 
 .azure
 
+#Environment Variable
 .env
