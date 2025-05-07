@@ -2,6 +2,7 @@
 import { useNoteFilters } from '@/composables/useNoteFilters'
 import { useRouter } from 'vue-router'
 import { IconChevronDown, IconChevronUp, IconSelector } from '@tabler/icons-vue';
+import { getDateTime } from '@/utils/date-time-format';
 
 const router = useRouter()
 const { searchQuery, filterTodayOnly, filteredNotes, sortKey, setSortKey, sortOrder } = useNoteFilters()
@@ -22,7 +23,7 @@ function createNote() {
   router.push(`/create`)
 }
 
-function getSortIcon(key: 'title' | 'createdAt') {
+function getSortIcon(key: 'title' | 'created_At') {
   if (sortKey.value !== key) return IconSelector
   return sortOrder.value === 'asc' ? IconChevronUp : IconChevronDown
 }
@@ -57,9 +58,9 @@ function getSortIcon(key: 'title' | 'createdAt') {
 
             <th class="px-6 py-3">Content</th>
 
-            <th class="px-6 py-3 cursor-pointer select-none flex items-center gap-1" @click="setSortKey('createdAt')">
+            <th class="px-6 py-3 cursor-pointer select-none flex items-center gap-1" @click="setSortKey('created_At')">
               Created At
-              <component :is="getSortIcon('createdAt')" class="w-4 h-4" />
+              <component :is="getSortIcon('created_At')" class="w-4 h-4" />
             </th>
             <th class="px-6 py-3 rounded-e-lg">Action</th>
           </tr>
@@ -75,7 +76,7 @@ function getSortIcon(key: 'title' | 'createdAt') {
               {{ note.content }}
             </td>
             <td class="px-6 py-4">
-              {{ note.createdAt }}
+              {{ getDateTime(note.created_At) }}
             </td>
             <td class="px-6 py-4 flex gap-2">
               <button class="text-blue-600 hover:underline cursor-pointer" @click.stop="editNote(note.id)">

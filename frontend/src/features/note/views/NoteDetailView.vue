@@ -1,51 +1,57 @@
 <script setup lang="ts">
 import BackButton from '@/components/BackButton.vue';
-import { ref } from 'vue';
+import { useGetNote } from '../api/useGetNote';
+import { useRoute, useRouter } from 'vue-router'
+import { getDateTime } from '@/utils/date-time-format';
+import { IconLoader } from '@tabler/icons-vue';
 
-const note = ref({
-  title: 'First Note',
-  content: 'This is the content of the note, and here are some details.',
-  createdAt: '2025-05-06',
-});
+const route = useRoute()
+const { data, isLoading, isError } = useGetNote(Number(route.params.id))
+
+const router = useRouter();
 
 const editNote = () => {
-  console.log('Edit note');
+  router.push(`/${route.params.id}/edit`);
 };
 
 const deleteNote = () => {
   console.log('Delete note');
 };
+
 </script>
 
 <template>
   <div class="container max-w-4xl py-8">
     <BackButton />
-    <div class="mt-8 p-6 bg-white shadow-md rounded-lg">
+
+    <div v-if="isLoading" class="text-gray-500 text-center h-96 flex justify-center items-center">
+      <IconLoader class="animate-spin" />
+    </div>
+    <div v-else-if="isError" class="text-gray-500 text-center h-96 flex justify-center items-center">Note not found or
+      failed to load.</div>
+
+    <div v-else class="mt-8 p-6 bg-white shadow-md rounded-lg">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-3xl font-semibold text-gray-800">{{ note.title }}</h2>
+        <h2 class="text-3xl font-semibold text-gray-800">{{ data?.title }}</h2>
         <div class="space-x-3 flex">
-          <button
-            class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
-            @click="editNote"
-          >
+          <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" @click="editNote">
             Edit
           </button>
-          <button
-            class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
-            @click="deleteNote"
-          >
+          <button class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" @click="deleteNote">
             Delete
           </button>
         </div>
       </div>
 
       <div class="mb-4 text-gray-600">
-        <p class="font-medium text-gray-800">Created on: <span class="font-normal">{{ note.createdAt }}</span></p>
+        <p class="font-medium text-gray-800">Created on:
+          <span class="font-normal">{{ getDateTime(data?.created_At) }}</span>
+        </p>
       </div>
 
       <div class="mb-6">
         <h3 class="text-xl font-semibold text-gray-700 mb-2">Content</h3>
-        <p class="text-gray-800">{{ note.content }}</p>
+        <p class="text-gray-800">{{ data?.content }}</p>
       </div>
     </div>
   </div>
