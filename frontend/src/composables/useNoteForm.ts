@@ -1,13 +1,15 @@
 import { toTypedSchema } from '@vee-validate/valibot'
-import { object, optional, string } from 'valibot'
+import * as v from 'valibot'
 import { useField, useForm } from 'vee-validate'
 
 export const useNoteForm = (props?: { title: string; content?: string }) => {
   const schema = toTypedSchema(
-    object({
-      title: string('Title is required'),
-      content: optional(string()),
-    }),
+    v.pipe(
+      v.object({
+        title: v.pipe(v.string('Title is required'), v.nonEmpty('Title is required')),
+        content: v.optional(v.pipe(v.string())),
+      }),
+    ),
   )
 
   const { handleSubmit, setValues } = useForm({
