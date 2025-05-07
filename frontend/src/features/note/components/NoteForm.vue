@@ -43,7 +43,6 @@ const onSubmit = handleSubmit(async (values) => {
   } catch (error) {
     errorMessage.value = error instanceof Error ? error.message : 'An unexpected error occurred.'
   }
-  console.log('Submitted:', values)
 })
 
 watch(() => props.initialValues, (newVal) => {

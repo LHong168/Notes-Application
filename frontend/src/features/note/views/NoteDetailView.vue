@@ -4,9 +4,13 @@ import { useGetNote } from '../api/useGetNote';
 import { useRoute, useRouter } from 'vue-router'
 import { getDateTime } from '@/utils/date-time-format';
 import { IconLoader } from '@tabler/icons-vue';
+import { useConfirmDialog } from '@/composables/useConfirmDialog';
+import { useDeleteNote } from '../api/useDeleteNoteMutation';
 
 const route = useRoute()
 const { data, isLoading, isError } = useGetNote(Number(route.params.id))
+const { mutateAsync } = useDeleteNote();
+const { open, error } = useConfirmDialog();
 
 const router = useRouter();
 
@@ -14,8 +18,17 @@ const editNote = () => {
   router.push(`/${route.params.id}/edit`);
 };
 
-const deleteNote = () => {
-  console.log('Delete note');
+const deleteNote = (id: number, title: string) => {
+  open(`Are you sure you want to delete "${title}" ?`,
+    async () => {
+      error.value = '';
+      try {
+        await mutateAsync(id);
+        router.push('/')
+      } catch (err) {
+        error.value = err instanceof Error ? err.message : 'An unexpected error occurred.'
+      }
+    })
 };
 
 </script>
@@ -37,7 +50,8 @@ const deleteNote = () => {
           <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" @click="editNote">
             Edit
           </button>
-          <button class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600" @click="deleteNote">
+          <button class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
+            @click="deleteNote(data?.id || 0, data?.title || '')">
             Delete
           </button>
         </div>

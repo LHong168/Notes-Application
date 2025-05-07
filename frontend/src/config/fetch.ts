@@ -13,8 +13,8 @@ export const fetchAPI = async <T>(path: string, options = {}) => {
 
   // Handle response
   if (!response.ok) {
-    const res = (await response.json()) as { error: string }
-    throw new Error(res.error || `An error occurred please try again`)
+    const res = (await response.json()) as { message: string }
+    throw new Error(res.message || `An error occurred please try again`)
   }
 
   return response.json() as T

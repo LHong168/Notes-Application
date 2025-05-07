@@ -3,9 +3,13 @@ import { useNoteFilters } from '@/composables/useNoteFilters'
 import { useRouter } from 'vue-router'
 import { IconChevronDown, IconChevronUp, IconSelector } from '@tabler/icons-vue';
 import { getDateTime } from '@/utils/date-time-format';
+import { useConfirmDialog } from '@/composables/useConfirmDialog';
+import { useDeleteNote } from '../api/useDeleteNoteMutation';
 
 const router = useRouter()
 const { searchQuery, filterTodayOnly, filteredNotes, sortKey, setSortKey, sortOrder } = useNoteFilters()
+const { mutateAsync } = useDeleteNote();
+const { open } = useConfirmDialog();
 
 function goToDetail(id: number) {
   router.push(`/${id}`)
@@ -15,8 +19,11 @@ function editNote(id: number) {
   router.push(`/${id}/edit`)
 }
 
-function deleteNote(id: number) {
-  alert(`Delete note with ID ${id}`)
+function deleteNote(id: number, title: string) {
+  open(`Are you sure you want to delete "${title}" ?`,
+    async () => {
+      await mutateAsync(id) // If it throws, confirm() handles it and sets error
+    })
 }
 
 function createNote() {
@@ -48,7 +55,7 @@ function getSortIcon(key: 'title' | 'created_At') {
     </div>
 
     <div class="overflow-x-auto">
-      <table class="w-full text-sm text-left text-gray-700">
+      <table v-if="!!filteredNotes.length" class="w-full text-sm text-left text-gray-700">
         <thead class="text-xs uppercase bg-gray-100 text-gray-600">
           <tr>
             <th class="px-6 py-3 cursor-pointer select-none flex items-center gap-1" @click="setSortKey('title')">
@@ -73,7 +80,7 @@ function getSortIcon(key: 'title' | 'created_At') {
               {{ note.title }}
             </td>
             <td class="px-6 py-4">
-              {{ note.content }}
+              {{ note.content || 'N/A' }}
             </td>
             <td class="px-6 py-4">
               {{ getDateTime(note.created_At) }}
@@ -82,13 +89,16 @@ function getSortIcon(key: 'title' | 'created_At') {
               <button class="text-blue-600 hover:underline cursor-pointer" @click.stop="editNote(note.id)">
                 Edit
               </button>
-              <button class="text-red-600 hover:underline cursor-pointer" @click.stop="deleteNote(note.id)">
+              <button class="text-red-600 hover:underline cursor-pointer" @click.stop="deleteNote(note.id, note.title)">
                 Delete
               </button>
             </td>
           </tr>
         </tbody>
       </table>
+      <div v-else class="h-52 flex justify-center items-center">
+        <p>No Data</p>
+      </div>
     </div>
   </div>
 </template>
