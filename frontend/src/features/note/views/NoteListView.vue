@@ -22,7 +22,7 @@ function editNote(id: number) {
 function deleteNote(id: number, title: string) {
   open(`Are you sure you want to delete "${title}" ?`,
     async () => {
-      await mutateAsync(id) // If it throws, confirm() handles it and sets error
+      await mutateAsync(id)
     })
 }
 
@@ -38,8 +38,8 @@ function getSortIcon(key: 'title' | 'created_At') {
 
 <template>
   <div class="container py-12 space-y-6">
-    <div class="flex justify-between items-center gap-4 flex-wrap">
-      <div class="flex gap-3">
+    <div class="flex justify-between items-start sm:items-center gap-4 flex-wrap">
+      <div class="flex max-sm:flex-col gap-3">
         <input type="text" v-model="searchQuery" placeholder="Search notes..."
           class="border rounded px-3 py-2 w-full sm:w-auto" />
 
@@ -55,7 +55,7 @@ function getSortIcon(key: 'title' | 'created_At') {
     </div>
 
     <div class="overflow-x-auto">
-      <table v-if="!!filteredNotes.length" class="w-full text-sm text-left text-gray-700">
+      <table v-if="!!filteredNotes.length" class="w-full text-sm text-left text-gray-700 min-w-lg">
         <thead class="text-xs uppercase bg-gray-100 text-gray-600">
           <tr>
             <th class="px-6 py-3 cursor-pointer select-none flex items-center gap-1" @click="setSortKey('title')">
@@ -75,17 +75,17 @@ function getSortIcon(key: 'title' | 'created_At') {
         <tbody>
           <tr v-for="note in filteredNotes" :key="note.id" class="bg-white border-b border-b-gray-300 hover:bg-gray-50">
             <td
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap hover:underline underline-offset-2 cursor-pointer"
+              class="px-6 py-4 font-medium text-gray-900 hover:underline underline-offset-2 cursor-pointer min-w-sm max-w-xs"
               @click="goToDetail(note.id)">
               {{ note.title }}
             </td>
-            <td class="px-6 py-4">
+            <td class="px-6 py-4 max-w-lg min-w-sm">
               {{ note.content || 'N/A' }}
             </td>
-            <td class="px-6 py-4">
+            <td class="px-6 py-4  min-w-40">
               {{ getDateTime(note.created_At) }}
             </td>
-            <td class="px-6 py-4 flex gap-2">
+            <td class="px-6 py-4 flex gap-2 items-center">
               <button class="text-blue-600 hover:underline cursor-pointer" @click.stop="editNote(note.id)">
                 Edit
               </button>

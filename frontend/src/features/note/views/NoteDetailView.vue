@@ -29,7 +29,7 @@ const deleteNote = (id: number, title: string) => {
 </script>
 
 <template>
-  <div class="container max-w-4xl py-8">
+  <div class="container max-w-4xl py-8 bg-gray-50">
     <BackButton />
 
     <div v-if="isLoading" class="text-gray-500 text-center h-96 flex justify-center items-center">
@@ -39,18 +39,16 @@ const deleteNote = (id: number, title: string) => {
       failed to load.</div>
 
     <div v-else class="mt-8 p-6 bg-white shadow-md rounded-lg">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-3xl font-semibold text-gray-800">{{ data?.title }}</h2>
-        <div class="space-x-3 flex">
-          <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" @click="editNote">
-            Edit
-          </button>
-          <button class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
-            @click="deleteNote(data?.id || 0, data?.title || '')">
-            Delete
-          </button>
-        </div>
+      <div class="space-x-3 flex justify-end mb-3">
+        <button class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" @click="editNote">
+          Edit
+        </button>
+        <button class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
+          @click="deleteNote(data?.id || 0, data?.title || '')">
+          Delete
+        </button>
       </div>
+      <h2 class="text-3xl font-semibold text-gray-800 mb-5">{{ data?.title }}</h2>
 
       <div class="mb-4 text-gray-600">
         <p class="font-medium text-gray-800">Created on:

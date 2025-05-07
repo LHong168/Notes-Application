@@ -37,8 +37,6 @@ const onSubmit = handleSubmit(async (values) => {
     } else {
       await createNote.mutateAsync(formData)
     }
-
-    // Redirect to the note list after success
     router.push('/')
   } catch (error) {
     errorMessage.value = error instanceof Error ? error.message : 'An unexpected error occurred.'
