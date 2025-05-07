@@ -1,16 +1,7 @@
 <script setup lang="ts">
 import BackButton from '@/components/BackButton.vue';
-import { reactive } from 'vue'
 import NoteForm from '../components/NoteForm.vue';
 
-const formState = reactive({
-  title: "Title Example",
-  content: "Content Example"
-})
-
-function submitForm() {
-  console.log('Submitted:', { title: formState.title, content: formState.content })
-}
 </script>
 
 <template>
