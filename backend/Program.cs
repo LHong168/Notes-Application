@@ -1,8 +1,6 @@
 using backend.Models.Config;
 using DotNetEnv;
 using backend.Repos;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +12,16 @@ builder.Configuration.AddEnvironmentVariables();
 var conn = builder.Configuration["ConnectionStrings:DefaultConnection"];
 
 // Add services to the container.
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 
@@ -34,6 +42,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+app.UseRouting();
+
+app.UseCors();
 
 app.UseAuthorization();
 

@@ -21,15 +21,15 @@ namespace backend.Repos
             {
                 DateTime now = DateTime.Now;
                 const string query = @"
-                    INSERT INTO note (title, content, create_at, update_at)
+                    INSERT INTO note (title, content, created_at, updated_at)
                     OUTPUT INSERTED.id
-                    VALUES (@title, @content, @create_at, @update_at);";
+                    VALUES (@title, @content, @created_at, @updated_at);";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("title", note.Title, DbType.String);
                 parameters.Add("content", note.Content, DbType.String);
-                parameters.Add("create_at", now, DbType.DateTime2);
-                parameters.Add("update_at", now, DbType.DateTime2);
+                parameters.Add("created_at", now, DbType.DateTime2);
+                parameters.Add("updated_at", now, DbType.DateTime2);
 
                 using var connection = context.CreateConnection();
                 var newId = await connection.ExecuteScalarAsync<int>(query, parameters);
@@ -110,14 +110,14 @@ namespace backend.Repos
                 DateTime now = DateTime.Now;
                 const string query = @"
                     UPDATE note 
-                    SET title = @title, content = @content, update_at = @update_at
+                    SET title = @title, content = @content, updated_at = @updated_at
                     WHERE id = @id";
 
                 var parameters = new DynamicParameters();
                 parameters.Add("id", id, DbType.Int32);
                 parameters.Add("title", note.Title, DbType.String);
                 parameters.Add("content", note.Content, DbType.String);
-                parameters.Add("update_at", now, DbType.DateTime2);
+                parameters.Add("updated_at", now, DbType.DateTime2);
 
                 using var connection = context.CreateConnection();
                 var affected = await connection.ExecuteAsync(query, parameters);
