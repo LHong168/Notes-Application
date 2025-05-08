@@ -3,6 +3,6 @@ builder = "dockerfile"
 dockerfilePath = "./Dockerfile"
 
 [deploy]
-startCommand = "./"
+startCommand = "dotnet backend.dll"
 restartPolicyType = "always"
 healthcheckPath = "/health"
