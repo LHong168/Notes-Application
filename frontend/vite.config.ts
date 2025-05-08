@@ -16,7 +16,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://lyhong-001-site1.ltempurl.com',
+        target: 'https://6d42td62-5292.asse.devtunnels.ms',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       },
