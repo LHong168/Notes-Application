@@ -7,9 +7,10 @@ namespace backend.Models.Config
     {
         private readonly IConfiguration _configuration;
         private readonly string connectionString;
-        public DBContext(IConfiguration configuration) {
+        public DBContext(IConfiguration configuration)
+        {
             this._configuration = configuration;
-            this.connectionString = _configuration.GetConnectionString("DefaultConnection");
+            this.connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? configuration["ConnectionStrings:DefaultConnection"];
         }
 
         public IDbConnection CreateConnection() => new SqlConnection(connectionString);

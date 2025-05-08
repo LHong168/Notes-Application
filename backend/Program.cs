@@ -8,7 +8,11 @@ Env.Load();
 
 builder.Configuration.AddEnvironmentVariables();
 
-var conn = builder.Configuration["ConnectionStrings:DefaultConnection"];
+var port = Environment.GetEnvironmentVariable("PORT");
+if (!string.IsNullOrEmpty(port))
+{
+    builder.WebHost.UseUrls($"http://*:{port}");
+}
 
 // Add services to the container.
 
@@ -16,7 +20,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins(builder.Configuration["BASE_URL"] ?? "http://localhost:5173")
+        policy.WithOrigins(Environment.GetEnvironmentVariable("FRONTEND_URL") ?? "http://localhost:5173")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
