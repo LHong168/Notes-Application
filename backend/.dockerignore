@@ -56,3 +56,12 @@ Dockerfile
 # Example: Documentation, scripts, etc.
 docs/
 scripts/
+
+# directories
+**/bin/
+**/obj/
+**/out/
+
+# files
+Dockerfile*
+**/*.md
