@@ -1,0 +1,58 @@
+# Object files
+**/obj/
+
+# Temporary files
+**/tmp/
+**/.vs/
+**/*.user
+**/*.suo
+**/*.sln.docstates
+
+# Build outputs
+**/bin/
+**/publish/
+
+# NuGet cache and packages
+**/.nuget/
+**/packages/
+
+# Node.js artifacts (if you have a frontend integrated in the backend build)
+**/node_modules/
+**/yarn.lock
+
+# Static web assets from the frontend build (if separate)
+**/wwwroot/
+
+# Environment-specific configuration (sensitive information)
+appsettings.Development.json
+appsettings.*.user.json
+**/.env
+**/.env.*
+
+# Git related
+.git
+.gitignore
+.gitattributes
+
+# Docker related (optional, but good practice)
+Dockerfile
+.dockerignore
+
+# Test related
+**/TestResults/
+**/*Tests/
+
+# Logs
+**/*.log
+
+# User secrets (sensitive information)
+**/Properties/launchSettings.json
+
+# Other IDE specific files
+.vscode/
+.idea/
+
+# Any other files or directories you don't need in the image
+# Example: Documentation, scripts, etc.
+docs/
+scripts/
