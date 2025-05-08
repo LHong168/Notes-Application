@@ -1,12 +1,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy csproj and restore dependencies
-COPY *.csproj ./
+# Copy everything first
+COPY . ./
+
+# Then run restore
 RUN dotnet restore
 
-# Copy all files and build
-COPY . ./
+# Build the application
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
@@ -18,4 +19,5 @@ COPY --from=build /app/out .
 ENV ASPNETCORE_URLS=http://+:$PORT
 ENV ASPNETCORE_ENVIRONMENT=Production
 
-ENTRYPOINT ["dotnet", "YourBackendProject.dll"]
+# Make sure to use your actual DLL name here
+ENTRYPOINT ["dotnet", "backend.dll"]
