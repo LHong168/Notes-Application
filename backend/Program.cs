@@ -8,11 +8,8 @@ Env.Load();
 
 builder.Configuration.AddEnvironmentVariables();
 
-var port = Environment.GetEnvironmentVariable("PORT");
-if (!string.IsNullOrEmpty(port))
-{
-    builder.WebHost.UseUrls($"http://*:{port}");
-}
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8081";
+builder.WebHost.UseUrls($"http://*:{port}");
 
 // Add services to the container.
 
