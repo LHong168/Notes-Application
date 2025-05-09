@@ -1,4 +1,0 @@
-[deploy]
-startCommand = "dotnet backend.dll"
-restartPolicyType = "always"
-healthcheckPath = "/health"
